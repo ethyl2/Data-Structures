@@ -5,7 +5,18 @@ class Heap:
     def insert(self, value):
         # Adds the input value into the heap.
         # This method should ensure that the inserted value is in the correct spot in the heap.
+        print("Time to add " + str(value))
         self.storage.append(value)
+        # current_index = self.storage.index(value)
+        current_index = len(self.storage) - 1
+        print("Let's start by putting it at index " + str(current_index))
+        # print(current_index)
+        while current_index > 0:
+            self._bubble_up(current_index)
+            # self._sift_down(current_index)
+            # current_index -= 1
+            current_index = (current_index - 1)//2
+        print("\n")
 
     def delete(self):
         # Removes and returns the 'topmost' value from the heap.
@@ -27,10 +38,16 @@ class Heap:
         if index == 0:
             return
         parent_index = (index-1)//2
+        # current_value = self.storage[len(self.storage)-1] # I accidentally wrote this.
         current_value = self.storage[index]
         if self.storage[parent_index] < self.storage[index]:
+            print("time to bubble up because parent " +
+                  str(self.storage[parent_index]) + " < " + str(self.storage[index]))
             self.storage[index] = self.storage[parent_index]
             self.storage[parent_index] = current_value
+        else:
+            print("no need to bubble up because parent " +
+                  str(self.storage[parent_index]) + " >= " + str(self.storage[index]))
 
     def _sift_down(self, index):
         # grabs the indices of this element's children
@@ -51,19 +68,24 @@ class Heap:
         return
 
 
+'''
 my_heap = Heap()
 my_heap.insert(19)
+
 my_heap.insert(100)
+
 my_heap.insert(36)
+
 my_heap.insert(17)
 my_heap.insert(3)
 my_heap.insert(25)
 my_heap.insert(1)
 my_heap.insert(2)
 my_heap.insert(7)
+'''
 # print(my_heap.get_max())
 # print(my_heap.get_size())
-print(my_heap.storage)
+# print(my_heap.storage)
 # my_heap._sift_down(0)
-my_heap._bubble_up(1)
-print(my_heap.storage)
+# my_heap._bubble_up(1)
+# print(my_heap.storage)
