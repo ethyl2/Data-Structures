@@ -1,5 +1,5 @@
 # from dll_stack import Stack
-# from dll_queue import Queue
+from dll_queue import Queue
 '''
 import sys
 sys.path.append('../queue_and_stack')
@@ -89,10 +89,22 @@ class BinarySearchTree:
     # in an iterative breadth first traversal
 
     def bft_print(self, node):
-        pass
+        q = Queue()
+        while node is not None:
+            print(node.value)
+            if node.left:
+                q.enqueue(node.left)
+            if node.right:
+                q.enqueue(node.right)
+            if q.len() > 0:
+                node = q.dequeue()
+            else:
+                break
+        return
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
+
     def dft_print(self, node):
         pass
 
@@ -106,3 +118,16 @@ class BinarySearchTree:
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         pass
+
+
+'''
+my_bst = BinarySearchTree(1)
+my_bst.insert(8)
+my_bst.insert(5)
+my_bst.insert(7)
+my_bst.insert(6)
+my_bst.insert(3)
+my_bst.insert(4)
+my_bst.insert(2)
+my_bst.bft_print(my_bst)
+'''
