@@ -127,8 +127,19 @@ class BinarySearchTree:
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
+    '''
+    To traverse a binary tree in preorder,
+    1. Visit the root.
+    2. Traverse the left sub tree of root.
+    3. Traverse the right sub tree of root.
+    '''
+
     def pre_order_dft(self, node):
-        pass
+        if node == None:
+            return
+        print(node.value)
+        self.pre_order_dft(node.left)
+        self.pre_order_dft(node.right)
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
@@ -145,5 +156,6 @@ my_bst.insert(3)
 my_bst.insert(4)
 my_bst.insert(2)
 # my_bst.bft_print(my_bst)
-my_bst.dft_print(my_bst)
+# my_bst.dft_print(my_bst)
+my_bst.pre_order_dft(my_bst)
 '''
