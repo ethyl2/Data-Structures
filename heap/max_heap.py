@@ -5,23 +5,27 @@ class Heap:
     def insert(self, value):
         # Adds the input value into the heap.
         # This method should ensure that the inserted value is in the correct spot in the heap.
-        print("Time to add " + str(value))
+
+        # print("Time to add " + str(value))
         self.storage.append(value)
-        # current_index = self.storage.index(value)
+
         current_index = len(self.storage) - 1
-        print("Let's start by putting it at index " + str(current_index))
-        # print(current_index)
-        while current_index > 0:
+        # print("Let's start by putting it at index " + str(current_index))
+
+        while current_index >= 0:
             self._bubble_up(current_index)
-            # self._sift_down(current_index)
-            # current_index -= 1
+            # Move to the parent
             current_index = (current_index - 1)//2
-        print("\n")
+        # print("\n")
 
     def delete(self):
         # Removes and returns the 'topmost' value from the heap.
         # This method needs to ensure that the heap property is maintained after the topmost element has been removed.
         topmost = self.storage.pop(0)
+        current_index = 0
+        while current_index <= len(self.storage) - 1:
+            self._sift_down(current_index)
+            current_index += 1
         return topmost
 
     def get_max(self):
@@ -38,16 +42,16 @@ class Heap:
         if index == 0:
             return
         parent_index = (index-1)//2
-        # current_value = self.storage[len(self.storage)-1] # I accidentally wrote this.
+
         current_value = self.storage[index]
         if self.storage[parent_index] < self.storage[index]:
-            print("time to bubble up because parent " +
-                  str(self.storage[parent_index]) + " < " + str(self.storage[index]))
+            # print("time to bubble up because parent " +
+            #       str(self.storage[parent_index]) + " < " + str(self.storage[index]))
             self.storage[index] = self.storage[parent_index]
             self.storage[parent_index] = current_value
-        else:
-            print("no need to bubble up because parent " +
-                  str(self.storage[parent_index]) + " >= " + str(self.storage[index]))
+        # else:
+        #     print("no need to bubble up because parent " +
+        #           str(self.storage[parent_index]) + " >= " + str(self.storage[index]))
 
     def _sift_down(self, index):
         # grabs the indices of this element's children
@@ -58,9 +62,9 @@ class Heap:
         right_index = (2*index + 2)
         max_index = index
         parent_value = self.storage[index]
-        if self.storage[left_index] > self.storage[max_index]:
+        if left_index <= len(self.storage) - 1 and self.storage[left_index] > self.storage[max_index]:
             max_index = left_index
-        if self.storage[right_index] > self.storage[max_index]:
+        if right_index <= len(self.storage) - 1 and self.storage[right_index] > self.storage[max_index]:
             max_index = right_index
         if max_index != index:
             self.storage[index] = self.storage[max_index]
