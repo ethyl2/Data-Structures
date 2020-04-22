@@ -47,6 +47,7 @@ class AVLTree:
     """
 
     def update_height(self):
+        # Find the largest distance between the head (node) and its subtree bottom
         pass
 
     """
@@ -54,6 +55,7 @@ class AVLTree:
     """
 
     def update_balance(self):
+        # self.balance = height of left subtree - height of right subtree
         pass
 
     """
