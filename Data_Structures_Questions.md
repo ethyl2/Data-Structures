@@ -47,29 +47,35 @@ https://www.geeksforgeeks.org/complexity-different-operations-binary-tree-binary
 
 ## Doubly Linked List
 
-1. What is the runtime complexity of `ListNode.insert_after`?
+1. What is the runtime complexity of `ListNode.insert_after`? O(1)?
 
-2. What is the runtime complexity of `ListNode.insert_before`?
+2. What is the runtime complexity of `ListNode.insert_before`? O(1)?
 
-3. What is the runtime complexity of `ListNode.delete`?
+3. What is the runtime complexity of `ListNode.delete`? O(1)?
 
 4. What is the runtime complexity of `DoublyLinkedList.add_to_head`? O(1)
 
 5. What is the runtime complexity of `DoublyLinkedList.remove_from_head`? O(1)
 
-6. What is the runtime complexity of `DoublyLinkedList.add_to_tail`?
+6. What is the runtime complexity of `DoublyLinkedList.add_to_tail`? O(1)?
 
-7. What is the runtime complexity of `DoublyLinkedList.remove_from_tail`?
+7. What is the runtime complexity of `DoublyLinkedList.remove_from_tail`? O(1)?
 
-8. What is the runtime complexity of `DoublyLinkedList.move_to_front`?
+8. What is the runtime complexity of `DoublyLinkedList.move_to_front`? O(1)?
 
-9. What is the runtime complexity of `DoublyLinkedList.move_to_end`?
+9. What is the runtime complexity of `DoublyLinkedList.move_to_end`? O(1)?
 
-10. What is the runtime complexity of `DoublyLinkedList.delete`? O(n) to find
+10. What is the runtime complexity of `DoublyLinkedList.delete`? O(1) when the node is the parameter. O(n) to find if the value is the parameter, so the node has to be found first.
 
-    a. Compare the runtime of the doubly linked list's `delete` method with the worst-case runtime of the JS `Array.splice` method. Which method generally performs better?
+    a. Compare the runtime of the doubly linked list's `delete` method with the worst-case runtime of the JS `Array.splice` method. Which method generally performs better? DLL's delete worst-case is O(1) when the node is the parameter, while the worst case runtime of Array.splice would be O(n) -> such as when the first item is deleted, with no addition of another item, all the other items must be shifted up an index.
 
----
+    About array.splice:
+
+    array.splice(index, howManyToRemove, item1toAdd, ....., itemXtoAdd)
+
+    The array.splice() method adds/removes items to/from an array, and returns the removed item(s).
+
+    This method changes the original array.
 
 ## For reference:
 
