@@ -55,14 +55,17 @@ our_ll.make_new_head(3)
 our_ll.make_new_head(2)
 our_ll.make_new_head(1)
 
+# our_ll.print_list()
+
+our_ll.reverse2(our_ll.head, None)
+
 our_ll.print_list()
 
-our_ll.reverse()
-
-our_ll.print_list()
+'''
 print('\n')
 print(our_ll.find_mid().value)
 print('\n')
 our_ll.reverse()
 our_ll.add_to_tail(6)
 our_ll.print_list()
+'''

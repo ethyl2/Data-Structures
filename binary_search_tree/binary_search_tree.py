@@ -1,5 +1,6 @@
 from dll_stack import Stack
 from dll_queue import Queue
+from collections import deque
 '''
 import sys
 sys.path.append('../queue_and_stack')
@@ -40,7 +41,6 @@ class BinarySearchTree:
             else:
                 self.right = BinarySearchTree(value)
 
-
     def contains(self, target):
         # Return True if the tree contains the value
         # False if it does not
@@ -80,6 +80,39 @@ class BinarySearchTree:
             self.left.for_each(cb)
         elif self.right:
             self.right.for_each(cb)
+
+    def for_each_lecture(self, cb):
+        cb(self.value)
+        # base case is when self has no left or right
+        if self.left:
+            self.left.for_each(cb)
+        if self.right:
+            self.right.for_each(cb)
+
+    def for_each_iterative_depth_first(self, cb):
+        stack = []
+        stack.append(self)
+        while len(stack) > 0:
+            current_node = stack.pop()
+            # Checking the right first will result in the same order as the
+            # recursive (lecture) version above
+            if current_node.right:
+                stack.append(current_node.right)
+            if current_node.left:
+                stack.append(current_node.left)
+            cb(current_node.value)
+
+    def for_each_iterative_breadth_first(self, cb):
+        q = deque()
+        q.append(self)
+        while len(q) > 0:
+            current_node = q.popleft()
+            # for left to right ordering, check left first.
+            if current_node.left:
+                q.append(current_node.left)
+            if current_node.right:
+                q.append(current_node.right)
+            cb(current_node.value)
 
     # DAY 2 Project -----------------------
 

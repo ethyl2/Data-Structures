@@ -23,11 +23,15 @@ Answer the following questions for each of the data structures you implemented a
 
 ## Binary Search Tree
 
-1. What is the runtime complexity of `insert`?
+1. What is the runtime complexity of `insert`? O(n) because in worst case, need to touch each node.
 
-2. What is the runtime complexity of `contains`?
+Example: inserting 1 in 7 -> 2
 
-3. What is the runtime complexity of `get_max`?
+https://www.geeksforgeeks.org/complexity-different-operations-binary-tree-binary-search-tree-avl-tree/
+
+2. What is the runtime complexity of `contains`? O(log n)
+
+3. What is the runtime complexity of `get_max`? O(n) because in worst case, need to touch each node (??)
 
 ## Heap
 
@@ -69,4 +73,4 @@ Answer the following questions for each of the data structures you implemented a
 
 ## For reference:
 
-- dictionaries give us constant access time
+- Dictionaries give us constant access time AKA O(1)
