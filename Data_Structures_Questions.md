@@ -19,7 +19,7 @@ Answer the following questions for each of the data structures you implemented a
 
    O(1) because a linked list does not require a contiguous block of memory.
 
-3. What is the runtime complexity of `len`?
+3. What is the runtime complexity of `len`? O(1) in my case, because len() returns the value of the property size. If it needed to calculate the length, I wonder if it would be O(n)?
 
 ## Binary Search Tree
 
@@ -35,15 +35,27 @@ https://www.geeksforgeeks.org/complexity-different-operations-binary-tree-binary
 
 ## Heap
 
-1. What is the runtime complexity of `_bubble_up`?
+1. What is the runtime complexity of `_bubble_up`? O(1)
 
-2. What is the runtime complexity of `_sift_down`?
+2. What is the runtime complexity of `_sift_down`? O(1)
 
-3. What is the runtime complexity of `insert`?
+3. What is the runtime complexity of `insert`? O(log n) according to https://en.wikipedia.org/wiki/Binary_heap
 
-4. What is the runtime complexity of `delete`?
+"The number of operations required depends only on the number of levels the new element must rise to satisfy the heap property, thus the insertion operation has a worst-case time complexity of O(log n) but an average-case complexity of O(1)."
 
-5. What is the runtime complexity of `get_max`?
+4. What is the runtime complexity of `delete`? O(log n) according to https://en.wikipedia.org/wiki/Binary_heap
+
+5. What is the runtime complexity of `get_max`? O(1) with a max-heap
+
+Binary Heap
+
+| Algorithm | Average  | Worst case |
+| --------- | :------: | ---------: |
+| Space     |   O(n)   |       O(n) |
+| Search    |   O(n)   |       O(n) |
+| Insert    |   O(1)   |   O(log n) |
+| Delete    | O(log n) |   O(log n) |
+| Peek      |   O(1)   |       O(1) |
 
 ## Doubly Linked List
 
