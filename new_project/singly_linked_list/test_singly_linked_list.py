@@ -46,6 +46,16 @@ class LinkedListTests(unittest.TestCase):
         self.list.add_to_tail(101)
         self.assertEqual(self.list.get_max(), 101)
 
+    def test_remove_tail(self):
+        print(self.list)
+        self.list.add_to_tail(1)
+        self.list.add_to_tail(2)
+        self.list.add_to_tail(5)
+        self.list.add_to_tail(10)
+        print(self.list)
+        self.assertEqual(self.list.remove_tail(), 10)
+        print(self.list)
+
 
 if __name__ == '__main__':
     unittest.main()

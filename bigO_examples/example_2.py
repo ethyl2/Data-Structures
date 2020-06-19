@@ -1,3 +1,4 @@
+# Binary Search
 # JS version:
 '''
 var doSearch = function(array, targetValue) {    
@@ -51,4 +52,5 @@ print(do_search(numbers, 23))  # 6
 #
 #
 # O(log n) time b/c is a binary search
+# A logarithmic algorithm halves the input every time it’s run.
 # O(1) space
