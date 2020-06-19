@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import numpy as np
+
 
 # x represents different lengths of input
 x = [2, 4, 6, 8, 10, 12]

@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import numpy as np
+
 
 x = [2, 4, 6, 8, 10, 12]
 
