@@ -33,6 +33,11 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.assertTrue(self.bst.contains(2))
         self.assertTrue(self.bst.contains(7))
         self.assertFalse(self.bst.contains(8))
+        self.assertTrue(self.bst.contains_recursive(5))
+        self.assertTrue(self.bst.contains_recursive(3))
+        self.assertTrue(self.bst.contains_recursive(2))
+        self.assertTrue(self.bst.contains_recursive(7))
+        self.assertFalse(self.bst.contains_recursive(8))
 
     def test_get_max(self):
         self.assertEqual(self.bst.get_max(), 5)

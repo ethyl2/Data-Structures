@@ -32,12 +32,12 @@ class BinarySearchTree:
     def recursive_insert(self, value):
         if value < self.value:
             if self.left:
-                self.left.insert(value)
+                self.left.recursive_insert(value)
             else:
                 self.left = BinarySearchTree(value)
         else:
             if self.right:
-                self.right.insert(value)
+                self.right.recursive_insert(value)
             else:
                 self.right = BinarySearchTree(value)
 
@@ -57,6 +57,19 @@ class BinarySearchTree:
                     return False
                 else:
                     self = self.right
+
+    def contains_recursive(self, target):
+        if self.value == target:
+            return True
+        if self.value > target:
+            if self.left is None:
+                return False
+            found = self.left.contains_recursive(target)
+        else:
+            if self.right is None:
+                return False
+            found = self.right.contains_recursive(target)
+        return found
 
     # Return the maximum value found in the tree
 

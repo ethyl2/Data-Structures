@@ -17,6 +17,8 @@ def merge_sort(alist):
                 alist[k] = right_half[j]
                 j = j+1
             k = k+1
+
+        # Checking if any element was left
         while i < len(left_half):
             alist[k] = left_half[i]
             i = i+1

@@ -16,5 +16,12 @@ print_first_squared([4, 5, 6, 8])
 #
 #
 #
+#
+#
+#
+#
+#
+#
+#
 # time: O(1)
 # space: O(1)
