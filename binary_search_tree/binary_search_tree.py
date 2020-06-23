@@ -58,6 +58,19 @@ class BinarySearchTree:
                 else:
                     self = self.right
 
+    def contains_recursive(self, target):
+        if self.value == target:
+            return True
+        if self.value > target:
+            if self.left is None:
+                return False
+            found = self.left.contains_recursive(target)
+        else:
+            if self.right is None:
+                return False
+            found = self.right.contains_recursive(target)
+        return found
+
     # Return the maximum value found in the tree
 
     def get_max(self):
