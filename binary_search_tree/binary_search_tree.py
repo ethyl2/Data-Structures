@@ -32,12 +32,12 @@ class BinarySearchTree:
     def recursive_insert(self, value):
         if value < self.value:
             if self.left:
-                self.left.insert(value)
+                self.left.recursive_insert(value)
             else:
                 self.left = BinarySearchTree(value)
         else:
             if self.right:
-                self.right.insert(value)
+                self.right.recursive_insert(value)
             else:
                 self.right = BinarySearchTree(value)
 
