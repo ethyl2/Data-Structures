@@ -1,5 +1,5 @@
 import unittest
-from lru_cache_dan import LRUCache
+from lru_cache_with_ordered_dict import LRUCache
 
 
 class CacheTests(unittest.TestCase):

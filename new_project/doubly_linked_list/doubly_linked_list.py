@@ -62,6 +62,7 @@ class DoublyLinkedList:
             output_string += f'{str(curr.value)} -> '
             curr = curr.next
         output_string += f'None | Tail: {str(self.tail.value)}'
+        output_string += f' Length: {str(self.length)}'
 
         return output_string
 
