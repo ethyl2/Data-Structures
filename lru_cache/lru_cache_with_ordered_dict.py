@@ -21,13 +21,13 @@ class LRUCache:
     def get(self, key: int) -> int:
         '''
         Return the value stored at given key, if key exists.
-        Otherwise, return -1.
+        Otherwise, return -1. (Note: modify to return None if that is desired instead.)
         Move the entry of that key to the end of the cache, indicating that it's the most recently used item.
         '''
         if key in self.cache:
             self.cache.move_to_end(key)
             return self.cache[key]
-        return None
+        return -1
 
     def set(self, key: int, value: int) -> None:
         '''
